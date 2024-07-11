@@ -1,0 +1,102 @@
+library(shiny)
+library(ggplot2)
+
+# Sample data for demonstration
+house_prices <- data.frame(
+  Location = c(rep("bangalore", 3), rep("koppal", 3), rep("bellary", 3)),
+  Area = c(rep(c("Area1", "Area2", "Area3"), 3)),
+  Independent_House_Coefficient = c(20000, 18000, 16000, 10000, 9000, 8000, 5000, 4000, 3000),  # Coefficients for independent houses
+  Apartment_Coefficient = c(15000, 13000, 12000, 8000, 7000, 6000, 4000, 3000, 2000),  # Coefficients for apartments
+  stringsAsFactors = FALSE
+PREDICTION OF HOUSE PRICE
+
+)
+
+# Define the user interface
+ui <- fluidPage(
+  titlePanel("House Price Prediction"),
+  sidebarLayout(
+    sidebarPanel(
+      numericInput("sqft", "Enter square footage:", value = 1500),
+      numericInput("bedrooms", "Enter number of bedrooms:", value = 4),
+      numericInput("washrooms", "Enter number of washrooms:", value = 2), # Added washrooms input
+      conditionalPanel(
+        condition = "input.propertyTypeYesNo == 'No'",
+        numericInput("floors", "Enter number of floors:", value = 2)
+      ),
+      selectInput("location", "Location",
+                  unique(house_prices$Location)),
+      uiOutput("areaInput"),
+PREDICTION OF HOUSE PRICE
+
+      actionButton("askPropertyType", "Next")
+    ),
+    mainPanel(
+      h4("Predicted Price:"),
+      textOutput("predictedPrice"),
+      plotOutput("pricePlot"),
+      uiOutput("propertyTypeQuestions")
+    )
+  )
+)
+
+# Define the server logic
+server <- function(input, output, session) {
+  
+  # Reactive values to store property type and questions visibility
+  rv <- reactiveValues(propertyType = NULL, showQuestions = FALSE)
+  
+  # Show property type questions when "Next" button is clicked
+PREDICTION OF HOUSE PRICE
+
+  observeEvent(input$askPropertyType, {
+    rv$showQuestions <- TRUE
+  })
+  
+  # Show area input based on selected location
+  output$areaInput <- renderUI({
+    location_areas <- unique(house_prices$Area[house_prices$Location == input$location])
+    selectInput("area", "Area", choices = location_areas)
+  })
+  
+  # Determine property type based on answers to questions
+  observeEvent(input$propertyTypeYesNo, {
+    rv$propertyType <- ifelse(input$propertyTypeYesNo == "Yes", "Independent House", "Apartment")
+  })
+  
+  # Function to calculate predicted price based on inputs
+  calculate_price <- function(sqft, bedrooms, washrooms, floors, location, area, property_type) {
+PREDICTION OF HOUSE PRICE
+
+    if (property_type == "Independent House") {
+      coef <- house_prices$Independent_House_Coefficient[house_prices$Location == location & house_prices$Area == area]
+      predicted_price <- 50000 + 100 * sqft + 20000 * bedrooms + 5000 * washrooms + coef
+    } else {
+      coef <- house_prices$Apartment_Coefficient[house_prices$Location == location & house_prices$Area == area]
+      predicted_price <- 50000 + 100 * sqft + 20000 * bedrooms + 5000 * washrooms + 10000 * floors + coef
+    }
+    return(predicted_price)
+  }
+  
+  # Output the predicted price text
+  output$predictedPrice <- renderText({
+    if (rv$showQuestions) {
+      predicted_price <- calculate_price(input$sqft, input$bedrooms, input$washrooms, ifelse(rv$propertyType ==
+PREDICTION OF HOUSE PRICE
+
+ "Independent House", NA, input$floors), input$location, input$area, rv$propertyType)
+      paste0("Predicted price: ₹", round(predicted_price, 2))
+    } else {
+      ""
+    }
+  })
+  
+  # Show property type questions if the "Next" button is clicked
+  output$propertyTypeQuestions <- renderUI({
+    if (rv$showQuestions) {
+      fluidRow(
+        column(12, h4("Is the property an independent house?")),
+        column(6, radioButtons("propertyTypeYesNo", "Yes/No", choices = c("Yes", "No")))
+      )
+    }
+  })
