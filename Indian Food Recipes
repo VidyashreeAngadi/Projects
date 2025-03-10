@@ -1,0 +1,702 @@
+......................HTML-CODE....................................
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe-web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Project1.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Desi<span>Flavors</span></h1>
+        </div>
+        <ul>
+            <li><a href="#Home">HOME</a></li>
+            <li><a href="#Menu">MENU</a></li>
+            <li><a href="#About">ABOUT</a></li>
+            <li><a href="#Reviews">REVIEWS</a></li>
+            <li><a href="#Contact">CONTACT</a></li>
+        </ul>
+        <div class="iconss">
+            <div class="search-container">
+                <div class="search-icon">
+                  <i class="fas fa-search" onclick="toggleSearchBar()"></i>
+                </div>
+                <input type="text" id="search-bar" class="search-bar" placeholder="Search..." onkeyup="searchWebsite()">
+              </div>
+              <div id="search-results"></div>
+              <script>
+            function toggleSearchBar() {
+              const searchBar = document.getElementById('search-bar');
+              searchBar.classList.toggle('visible');
+            }
+            function searchWebsite() {
+              const query = document.getElementById('search-bar').value.toLowerCase();
+              const searchResults = document.getElementById('search-results');
+              if (query.length > 0) {
+                searchResults.innerHTML = `Searching for "${query}"...`;
+              } else {
+                searchResults.innerHTML = '';
+              }
+            }
+              </script>
+        </div>
+        <div class="theme">
+            <i class="fa-solid fa-sun" id="light"></i>
+            <i class="fa-solid fa-moon" id="dark"></i>
+        </div>
+    </nav>
+<!-- ...............................End............................................. -->
+ <div class="main" id="Home">
+    <div class="mainText">
+        <br><br><br><br>
+        <h1><span>Eat better</span> Not less</h1> 
+        <br><br>
+        <h3>Indian<span> Foods</span></h3>
+        <br><br>
+        <p>In the heart of India, where spices bloom,
+            A journey begins in the kitchen’s room.
+            Saffron and cumin, turmeric so bright,
+            Curry and rice dance in delight. <br>
+            From the north, a rich butter chicken’s grace,
+            To the south, dosa with a crispy embrace.
+            In the east, sweets like rosogolla reign,
+            And the west brings dhokla, soft and plain.
+            <br>
+            Chole bhature, a northwestern treat,
+            Vibrant curries and samosas to eat.
+            Aromatic biryanis fill the air,
+            Every bite is beyond compare.Paan to end with a sweet delight,
+            Indian <br>cuisine is a feast for the night!</p>
+            <br><br>
+            <button><a href="#Menu">Get it!</a></button>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+ </div>
+
+ <!-- .................................main-end............................................. -->
+<div class="fdCard" id="food">
+    <div class="head" id="Menu">
+        <h3>Our <span>Menu</span></h3>
+    </div>
+    <div class="cards">
+        <div class="crd">
+            <img src="/Images/f1.jpg" alt="" width="300px" height="300px">
+            <h3>Biryani</h3>
+            <p>Biryani is a flavorful and aromatic rice dish that originates from the Indian subcontinent and is popular worldwide.</p>
+            <button onclick="onePage()">Recipe</button>
+            <script>
+                function onePage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/Aaobt7X0-Rw";
+                }
+            </script>
+        </div>
+
+        <div class="crd">
+            <img src="/Images/f2.jpg" alt="" width="300px" height="300px">
+            <h3>Rogan Josh</h3>
+            <p>Rogan Josh is a rich, flavorful, and aromatic curry that originates from Kashmir, a region known for its deep culinary traditions.</p>
+            <!-- <button><a href="#Recipe2">Recipe</a></button> -->
+            <button onclick="twoPage()">Recipe</button>
+            <script>
+                function twoPage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/cXjTFJOpkDk";
+                }
+            </script>
+        </div>
+        <div class="crd">
+            <img src="/Images/f3.jpeg" alt="" width="300px" height="300px">
+            <h3>Gulab Jamun</h3>
+            <p>Small, deep-fried dough balls made from khoya (reduced milk) soaked in a sweet sugar syrup flavored with cardamom and rose water.</p>
+            <!-- <button><a href="#Recipe3">Recipe</a></button> -->
+            <button onclick="threePage()">Recipe</button>
+            <script>
+                function threePage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/dGGY3aIken4";
+                }
+            </script>
+        </div>
+        <div class="crd">
+            <img src="/Images/f4.jpg" alt="" width="300px" height="300px">
+            <h3>Ras Malai</h3>
+            <p>A creamy, rich dessert made from rasgullas soaked in sweetened milk flavored with cardamom and saffron, often garnished with pistachios.</p>
+            <!-- <button><a href="#Recipe4">Recipe</a></button> -->
+            <button onclick="fourPage()">Recipe</button>
+            <script>
+                function fourPage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/P05K7xcgkIA";
+                }
+            </script>
+        </div>
+        <div class="crd">
+            <img src="/Images/f5.jpg" alt="" width="300px" height="300px">
+            <h3>Tamarind Rice</h3>
+            <p>A famous dish from Tamil Nadu, made with rice and tamarind pulp, along with a blend of spices, peanuts, and sometimes jaggery. It's tangy, savory, flavorful.</p>
+            <!-- <button><a href="#Recipe5">Recipe</a></button> -->
+            <button onclick="fivePage()">Recipe</button>
+            <script>
+                function fivePage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/NLbs9PHJvtQ";
+                }
+            </script>
+       </div>
+        <div class="crd">
+            <img src="/Images/f6.jpg" alt="" width="300px" height="300px">
+            <h3>Tahiri</h3>
+            <p>A vegetarian biryani from Uttar Pradesh, made with basmati rice and aromatic spices. It's a simple yet flavorful dish often eaten with raita.</p>
+            <!-- <button><a href="#Recipe6">Recipe</a></button> -->
+            <button onclick="sixPage()">Recipe</button>
+            <script>
+                function sixPage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/ScdAj_HlqG8";
+                }
+            </script>
+        </div>
+        <div class="crd">
+            <img src="/Images/f7.jpg" alt="" width="300px" height="300px">
+            <h3>Paneer Butter Masala</h3>
+            <p>A vegetarian version of butter chicken, this curry features cubes of paneer (Indian cottage cheese) cooked in a creamy tomato-based gravy.</p>
+            <!-- <button><a href="#Recipe7">Recipe</a></button> -->
+            <button onclick="sevenPage()">Recipe</button>
+            <script>
+                function sevenPage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/U1LVDFwi8qI";
+                }
+            </script>
+        </div>
+        <div class="crd">
+            <img src="/Images/f8.jpg" alt="" width="300px" height="300px">
+            <h3>Butter Chicken</h3>
+            <p>Butter Chicken (also known as Murgh Makhani) is one of the most iconic and beloved dishes of Indian cuisine.</p>
+            <!-- <button><a href="#Recipe8">Recipe</a></button> -->
+            <button onclick="eightPage()">Recipe</button>
+            <script>
+                function eightPage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/D_fYk8mBaF4";
+                }
+            </script>
+        </div>
+        <div class="crd">
+            <img src="/Images/f9.jpg" alt="" width="300px" height="300px">
+            <h3>Chole Bhature </h3>
+            <p>This dish is a perfect combination of spicy chickpea curry (chole) and deep-fried bread (bhature), and it's loved for its bold flavors and satisfying nature.</p>
+            <!-- <button><a href="#Recipe9">Recipe</a></button> -->
+            <button onclick="ninePage()">Recipe</button>
+            <script>
+                function ninePage(pageUrl) {
+                    window.location.href ="https://www.youtube.com/embed/wKHdBZuDpOk";
+                }
+            </script>
+        </div>
+    </div>
+</div>
+    <!-- ........................................food-end...................................................... -->    
+
+<!-- Slider -->
+<div class="slider-container" id="Reviews">
+    <div class="head">
+        <h3>Customer <span>Reviews</span></h3>
+    </div>
+    <div class="slider">
+      <div class="slide">
+        <img src="/Images/m1.jpg" alt="">
+        <p>"Indian food is a vibrant mix of spices that dance on your palate. Each dish tells a story of tradition and bold flavors." </p>
+      </div>
+      <div class="slide">
+        <img src="/Images/m2.jpg" alt="">
+        <p>"The rich, creamy curries of India are unmatched in flavor. The perfect blend of spices makes every bite an experience." </p>
+      </div>
+      <div class="slide">
+        <img src="/Images/m3.jpg" alt="">
+        <p>"From street food to home-cooked meals, Indian cuisine offers an explosion of taste. It’s spicy, hearty, and incredibly satisfying." </p>
+      </div>
+      <div class="slide">
+        <img src="/Images/m4.jpg" alt="">
+        <p>"Indian food is full of depth, with its aromatic spices and hearty flavors. Whether vegetarian or meat-based, it never disappoints!" </p>
+      </div>
+      <div class="slide">
+        <img src="/Images/m5.jpg" alt="">
+        <p>"Aromatic, flavorful, and spicy, Indian dishes never fail to excite the senses. It’s comfort food with a perfect balance of heat and richness." </p>
+      </div>
+      <div class="slide">
+        <img src="/Images/m6.jpg" alt="">
+        <p>"Indian food combines the right amount of spice with a variety of textures. It’s a feast for the senses, offering something for every palate!" </p>
+      </div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+  <script>
+    let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function moveSlide(step) {
+  currentSlideIndex += step;
+  if (currentSlideIndex >= totalSlides) {
+    currentSlideIndex = 0;
+  }
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = totalSlides - 1;
+  }
+  const slider = document.querySelector('.slider');
+  slider.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+}
+setInterval(() => {
+  moveSlide(1);
+}, 3000);
+  </script>
+     <!-- .......................................slider-end...........................................  -->
+     <div class="footer" id="About">
+        <div class="text">
+            <div class="head">
+            <h3>About <span>Us</span></h3></div>
+            <p>Welcome to the ultimate destination for authentic Indian recipes! Here,we celebrate the diverse and vibrant flavors of India’s culinary traditions.Whether you're a seasoned chef or just starting your cooking journey, our easy-to-follow recipes will help you bring the rich, aromatic flavors of India to your kitchen. 
+                Indian cuisine is vast and varied,offering endless possibilities for creating delicious and exciting dishes. From hearty curries to flavorful rice dishes, from crispy snacks to sweet treats, there's something for everyone. Whether you're new to Indian food or an experienced home cook,these recipes will help you explore the depths of India’s culinary traditions in your own kitchen. 
+                India's food culture is incredibly diverse and rich, offering a vast array of recipes that vary from region to region. The flavors, techniques, and ingredients in Indian cuisine are influenced by geography, climate, culture, and history,resulting in a cuisine that is both vast and deeply varied. Below, I’ve provided more information on the different types of Indian recipes, categorized by type, region, and special ingredients.</p>
+            <br><br><br><br><br>
+        </div>
+        <div class="text">
+            <h3>Healthy</h3>
+            <p>Good Healthy</p>
+            <p>Fitness</p>
+            <p>Nutritions</p>
+            <p>Work beasts</p>
+        </div>
+        <div class="text">
+            <h3>Foods</h3>
+            <p>Quality</p>
+            <p>Best recipes</p>
+            <p>Tasty</p>
+            <p>Rich and healthy</p>
+        </div>
+        <div class="text">
+            <h3>Simple ingredients</h3>
+            <p>Easy </p>
+            <p>Timeliness</p>
+            <p>Varieties</p>
+            <p>Flavors</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+     </div>
+   <!-- ..........................................footer-enf............................................   -->
+
+     <section class="contact" id="Contact">
+        <div class="contact-text">
+            <h2>Contact Us</h2>
+            <br><br>
+            <h4>Let's contact us on</h4>
+            <br>
+            <div class="contact-list">
+                <li><a href="#">indianrecipes48@gmail.com</a></li>
+                <br>
+                <li><a href="#">+91 89xxxxxx20</a></li>
+            </div>
+            <div class="icons">              
+                <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-geeksforgeeks"></ion-icon></a>
+                <br><br><br><br><br>
+            </div>
+        </div> 
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </section>
+    <!-- ...............................contact-end................................................  -->
+</body>
+</html>
+
+
+......................................CSS-CODE.....................................................
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    font-family:"Roboto", serif ;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    width: 98%;
+    position: fixed;
+    top: 0%;
+    background-color: rgb(63, 62,62);
+    z-index: 999;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin-inline-end:40px;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    transition:all ease 0.5s;
+}
+ul li a:hover{
+    color: orange;
+    border-bottom: 2 px solid orange;
+}
+.iconss{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.iconss i{
+    margin-inline: 18px;
+    font-size: 20px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+.logo h1{
+    font-size: 30px;
+    color: white;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    background: url(/Images/RecipeHome.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 44px;
+    padding-top: 100px;
+    margin-top: 80px;
+}
+.mainText{
+    margin-top: 73px;
+    /* text-decoration: none; */
+}
+.mainText h1{
+    font-size: 50px;
+}
+.mainText h3{
+    font-size: 30px;
+    margin-top: 12px;
+}
+.mainText p{
+    margin-top: 22px;
+}
+.mainText button{
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid rgb(8,212,8);
+    color: white;
+    background-color: transparent;
+    margin-top: 22px;
+    transition: all ease 0.5s;
+    text-decoration: none; 
+}
+.mainText button:hover{
+    background-color: rgb(4, 152, 4);
+    cursor: pointer;
+    /* color: white; */
+}
+.mainText button a{
+    /* text-decoration: none; */
+    color: white;
+}
+.main h1 span{
+    color: rgb(7,231,7);
+}
+/* .............................main-end....................... */
+.logo span,
+.main span,
+.head span{
+    color: orangered;
+}
+.cards{
+    display:grid; 
+    justify-content: center; 
+    width: 80%;
+    grid-template-columns:repeat(auto-fit , minmax(300px,1fr));
+    margin: auto; 
+}
+.cards .crd{
+    margin-inline: 10px;
+    background-color: #fff;
+    /* margin-top: 42px; */
+    width: 320px;
+    height: 380px;
+    margin: 40px;
+    /* margin-bottom: 20px; */
+}
+.crd:hover{
+    background-color: rgb(179, 179, 179);
+    cursor: pointer;
+}
+.crd h3{
+    margin-top: 10px;
+    margin-left: 11px;
+}
+.crd p{
+    padding: 10px;
+}
+.crd button{
+    width: 99px;
+    height: 30px;
+    background-color: orange;
+    color: white;
+    font-size: 18px;
+    border: none;
+    margin-top: 11px;
+    margin-left: 11px;
+    text-decoration: none;
+}
+.crd button:hover{
+    background-color: transparent;
+    border: 2px solid orange;
+    color: black;
+    cursor: pointer;
+}
+.cards .crd img{
+    width: 100%;
+    height: 200px;
+}
+.head{
+    text-align: center;
+    padding:90px;
+    font-size: 30px;
+    /* margin-left:100px; */
+}
+/* ..........................................menu-end...................................... */
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .search-bar {
+    display: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .search-bar.visible {
+    display: block;
+  }
+/* ........................search-end.............................................................. */
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    /* background-color: aqua; */
+    margin-left: 250px;
+  }
+  .slider {
+    display:flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box; 
+    /* position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+    transition: all 1s ease;
+    text-align: center;
+    background-color: #fff; */
+    /* background-color: #ff7200; */ 
+  }
+  .slide img {
+    border-radius: 50%;
+    width: 25%;
+    height: 60%;
+    margin-top: 11px;
+    /* background-color: #ff7200; */
+    display:center;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+/* .................................................slider-end................................. */
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #ffff;
+    padding: 55px;
+    margin-top: 85px;
+}
+.text p{
+    margin-top: 11px;
+
+}
+.end{
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+.contact{
+    background-color: black;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	gap: 3rem;
+    /* margin-top: 200px; */
+}
+.contact-text h4{
+	margin: 15px 0;
+	color:white;
+	font-size: 30px;
+	font-weight: 600;
+    margin-left: 200px;
+}
+.contact-text h2{
+    /* background-color: aqua; */
+    width: 300px;
+	font-size:50px;
+    color: white;
+    margin-left: 400px;
+}
+.contact-text p{
+	color: var(--second-color);
+	font-size: var(--p-font);
+	line-height: 30px;
+	margin-bottom: 2rem;
+} 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth; 
+}
+.contact-list{
+	margin-bottom: 3rem;
+}
+.contact-list li{
+	margin-bottom: 10px;
+	display: block;
+}
+.contact-list li a{
+	display: block;
+	color:white;
+	font-size: var(--p-font);
+	font-weight: 600;
+	transition: all .40s ease;
+    margin-left: 200px;
+    box-decoration-break: none;
+}
+.contact-list li a:hover{
+	transform: scale(1.01) translateY(-5px);
+	color:orangered;
+}
+.contact-list li a butn{
+    margin-left: 200px;
+}
+.contact-icons i{
+	height: 40px;
+	width: 40px;
+	/* background:gray; */
+	border-radius: 0.5rem;
+	color:#eb4a4a;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	margin-right: 20px; 
+    padding-right: 10px;
+	transition: all .40s ease;
+}
+.contact-icons i:hover{
+	transform: scale(1.01) translateY(-5px);
+	color:#eb4a4a;
+	background: var(--main-color);
+}
+.icons{
+    text-decoration: none;
+    color: white;
+    margin-left: 180px;
+}
+.icons ion-icon{
+    color: white;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-top: 5px;
+    transition: .3s ease;
+    margin-left: 10px;
+}
+.icons ion-icon:hover{
+    color:#ff7200;
+}
+/* ......................................contact-end............................................. */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #555;
+    border-radius: 5px;
+}
+.theme{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.theme i{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.theme i.active{
+    color: orangered;
+}
+body.light{
+    background-color: #fff;
+    color: black;
+}
+body.dark{
+    background-color:#333 ;
+    color: black;
+}
