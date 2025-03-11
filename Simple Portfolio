@@ -1,0 +1,541 @@
+......................................HTML-CODE...............................................
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Project2.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#projects">ACHIVEMENTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="main" id="home">
+        <div class="mainText">
+            <!-- <h1><span>Charting My</span>Path</h1>  -->
+            <h1>Hello</h1>
+            <h3>I'm Vidyashree</h3>
+            <h4>Computer Science Student</h4>
+            <button><a href="/Images/Resume.pdf">Resume</a></button>
+        </div>
+    </div>
+<!-- ......................................main-end................................................................ -->
+        <div class="about" id="about">
+            <div class="head">
+                <br><br><br><br><br><br><br><br><br><br>
+            <h3>About<span>Me</span></h3></div>
+            <br><br><br><br><br><br>
+            <h4>Hi, My name is Vidyashree!!</h4>
+            <br>
+            <p>I am a B.Tech Third Year Student of BITM College, Pursuing My Degree in Computer SCience . I have a keen Interest in Problems Solving and Finding new and Dynamic Ideas.<br>
+            I am a DSA Enthusiast & Front-end Web Developer. I can provide clean code and pixel perfect design.</p><br>
+            <ol>
+                <li>Full-Stack Web-development</li>
+                <li>Python</li>
+                <li>DSA</li>
+                <li>MySQL</li>
+                <li>Problem Solving</li>
+            </ol>
+            <div class="about-img">
+                <img src="/Images/Photo2.jpg" alt="">
+            </div>
+        </div>
+    <!-- ......................................................about-end................................................ -->
+    <section class="skills" id="skills">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="head">
+          <h2>My <span>Skills</span></h2></div>
+          <br><br><br><br><br>
+          <div class="inner">
+              <div class="Tech_header">
+                  <h1>Languages</h1>
+              </div><br><br><br><br><br>
+              <div class="Tcontainer">
+                  <div class="skill-box">
+                      <div class="skill-title">
+                          <div class="tech_img">
+                              <img class="skill-icon" src="/Images/DSA-icon.jpg" alt="DSA">
+                          </div>
+                          <h3>DSA</h3>
+                      </div>
+                  </div>
+                  <div class="skill-box">
+                      <div class="skill-title">
+                          <div class="tech_img">
+                              <img class="skill-icon" src="/Images/HTML-icon.jpg" alt="Html">
+                          </div>
+                          <h3>HTML</h3>
+                      </div>
+                  </div>
+                  <div class="skill-box">
+                      <div class="skill-title">
+                          <div class="tech_img">
+                              <img class="skill-icon" src="/Images/CSS-icon.jpg" alt="Css">
+                          </div>
+                          <h3>CSS</h3>
+                      </div>
+                  </div>
+              <div class="skill-box">
+                  <div class="skill-title">
+                        <div class="tech_img">
+                          <img class="skill-icon" src="/Images/JS-icon.jpg" alt="JavaScript">
+                        </div>
+                        <h3>JavaScript</h3>
+                      </div>
+                  </div>
+                  <div class="skill-box">
+                      <div class="skill-title">
+                          <div class="tech_img">
+                              <img class="skill-icon" src="/Images/PYTHON-icon.jpg" alt="Python">
+                          </div>
+                          <h3>Python</h3>
+                      </div>
+                  </div>
+                  <div class="skill-box">
+                      <div class="skill-title">
+                          <div class="tech_img">
+                              <img class="skill-icon" src="/Images/JAVA-icon.jpg" alt="Java">
+                          </div>
+                          <h3>Java</h3>
+                      </div>
+                  </div>
+                  <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="tech_img">
+                            <img class="skill-icon" src="/Images/MySQL-icon.jpg" alt="MySQL">
+                        </div>
+                        <h3>MySQL</h3>
+                    </div>
+                  </div>
+               </div>
+            </div>
+    </section>
+<!-- ....................................................skills-end............................................. -->
+<section class="achivements" id="projects">
+    <div class="head">
+        <br><br><br><br><br>
+        <h4>My <span>Achivements</span></h4>
+    </div>
+    <br>
+    <h3>Some of my Achivements</h3>
+    <br><br>
+    <div class="imgs">
+        <img src="/Images/Udemy.jpeg" alt="Mastering Prompt Engineering">
+        <h1>Mastering Prompt Engineering</h1>
+        <br><br>
+        <img src="/Images/Internshala.jfif" alt="Participation in CIT">
+        <h1>Participation in Common Internship Test</h1>
+        <br><br>
+        <img src="/Images/HP-Life.jpeg" alt="Effective Leadership">
+        <h1>Effective Leadership</h1>
+        <br><br>
+        <img src="/Images/OfferleterInternship.jpeg" alt="Internship Offer letter at Cognifyz">
+        <h1>Internship Offer letter at Cognifyz</h1>
+        <br><br>
+        <img src="/Images/Accenture.jpeg" alt="Virtual Internship at Accenture">
+        <h1>Virtual Internship on developer and technologies job simulation at Accenture</h1>
+    </div>
+ </section>
+ <!-- ................................................achivements-end............................................... -->
+ <section class="contact" id="contact">
+    <div class="contact-text">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2>Contact Me</h2>
+        <br><br>
+        <div class="contact-list">
+            <li><a href="#">vidyashreea48@gmail.com</a></li>
+            <br>
+            <li><a href="#">+91 8951431220</a></li>
+        </div>
+        <div class="icons">              
+            <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-geeksforgeeks"></ion-icon></a>
+            <br><br><br><br><br>
+        </div>
+    </div> 
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</section>
+</body>
+</html>
+
+
+..................................................CSS-CODE...............................................
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    font-family:"Roboto", serif ;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    width:2000px;
+    position: fixed;
+    top: 0%;
+    background-color: rgb(63, 62,62);
+    z-index: 999;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin-inline-end:40px;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    transition:all ease 0.5s;
+    margin-left: 100px;
+    /* background-color: aqua; */
+}
+ul li a:hover{
+    color:peru;
+    border-bottom: 2 px solid peru;
+}
+/* .....................................................header-end................................................ */
+.main{
+    display: flex;
+    justify-content: space-between;
+    background: url(/Images/Portfolio.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 44px;
+    padding-top: 200px;
+    margin-top: 50px;
+}
+.mainText{
+    margin-top: 73px;
+}
+.mainText h1{
+    font-size: 50px;
+    margin-left: 200px;
+}
+.mainText h3{
+    font-size: 30px;
+    margin-top: 12px;
+    margin-left:200px; 
+}
+.mainText h4{
+    margin-top: 22px;
+    margin-left: 200px;
+}
+.mainText button{
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid rgb(63, 62,62);
+    color: white;
+    background-color: transparent;
+    margin-top: 22px;
+    transition: all ease 0.5s;
+    text-decoration: none; 
+    margin-left: 200px;
+}
+.mainText button:hover{
+    background-color: rgb(63, 62, 62);
+    cursor: pointer;
+    /* color: white; */
+}
+.mainText button a{
+    text-decoration: none; 
+    color: white;
+}
+.main h1 span{
+    color: rgb(62,63,62);
+}
+.head span{
+    color: orangered;
+}
+.head h3{
+    font-size: 35px;
+    display: inline;
+    margin-left:-100px;
+    background-color:black;
+}
+/* .........................................................main-end................................................. */
+.about {
+    font-size: 20px;
+    padding-left:600px;
+    color: white;
+    background-color: black;
+}
+.about-img{
+    text-align: center;
+}
+img{
+    width: 350px;
+    height: 400px;
+    margin-left:-1350px;
+    margin-top:-300px;
+    /* background-color: aqua; */
+}
+.about-img img{
+	height:500px;
+	width: 100%;
+	max-width:400px;
+    margin-bottom:30px;
+    border: beige;
+    /* background-color: azure; */
+}
+/* ..................................about-end............................................................. */
+.head h2{
+    font-size: 35px;
+    display: inline;
+    margin-left:600px;
+    color: white;
+    /* background-color:black; */
+}
+.skills{
+    background-color: black;
+}
+*{
+    padding: 0;
+    margin: 0;
+   box-sizing: border-box; 
+   font-family: 'Roboto', sans-serif;
+}
+.inner{
+    padding-top: 20px;
+    background-color: black;
+}
+.Tech_header{
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+}
+.Tech_header::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 100px;
+    background-color: #eb4a4a;
+    border-radius: 2px;
+}
+.Tcontainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    padding: 1rem 80px;
+    font-size: 1.2rem;
+}
+.skill-box{
+    padding: 1rem;
+    color: #ddd;
+    cursor: pointer;
+}
+.skill-box:hover > .skill-title:after, .skill-box:hover > .skill-title:before{
+    width: 35px;
+}
+.skill-box:hover .tech_img{
+    transform: translateY(-10px);
+}
+.skill-title{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.skill-title:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background-color: #eb4a4a;
+    transition: .5s;
+}
+.skill-title:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: #eb4a4a;
+    transition: .5s;
+}
+.skill-title h3{
+    color: #fff;
+    margin-top: 0.5rem;
+}
+.skill-icon{
+    width: 50px;
+	height: 50px;
+    z-index: 2;
+    margin-left:10px;
+}
+@media screen and (max-width: 990px){
+    .Tcontainer{
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem 50px;
+    }
+}
+@media screen and (max-width: 650px){
+    .Tcontainer{
+        grid-template-columns: 1fr;
+    }
+}
+/* .......................................skills-end............................................... */
+.achivements{
+    background-color: black; 
+    color: white; 
+    font-size: 50px; 
+}
+.achivements h4{
+    margin-left: 500px;
+}
+.achivements h3{
+    color: white;
+    font-size: 20px;
+    color: red;
+    /* background-color: greenyellow;  */
+    margin-left:500px;
+}
+.achivements img{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 20px; 
+    justify-items: center;  
+    max-width: 1200px; 
+    margin: 0 auto;  
+}
+.achivements h1{
+    color: white;
+    font-size: 20px;
+    margin-left:500px;
+}
+/* .......................................achivements-end.............................................. */
+.contact{
+    background-color: black;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	gap: 3rem;
+    /* margin-top: 200px; */
+}
+
+.contact-text h4{
+	margin: 15px 0;
+	color:white;
+	font-size: 30px;
+	font-weight: 600;
+    margin-left: 200px;
+}
+.contact-text h2{
+    /* background-color: aqua; */
+    width: 300px;
+	font-size:50px;
+    color: white;
+    margin-left: 400px;
+}
+
+.contact-text p{
+	color: var(--second-color);
+	font-size: var(--p-font);
+	line-height: 30px;
+	margin-bottom: 2rem;
+} 
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth; 
+}
+
+.contact-list{
+	margin-bottom: 3rem;
+}
+.contact-list li{
+	margin-bottom: 10px;
+	display: block;
+}
+.contact-list li a{
+	display: block;
+	color:white;
+	font-size: var(--p-font);
+	font-weight: 600;
+	transition: all .40s ease;
+    margin-left: 200px;
+    box-decoration-break: none;
+}
+.contact-list li a:hover{
+	transform: scale(1.01) translateY(-5px);
+	color:orangered;
+}
+
+.contact-list li a butn{
+    margin-left: 200px;
+}
+
+.contact-icons i{
+	height: 40px;
+	width: 40px;
+	background:gray;
+	border-radius: 0.5rem;
+	color:#eb4a4a;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	margin-right: 20px; 
+    padding-right: 10px;
+	transition: all .40s ease;
+}
+
+.contact-icons i:hover{
+	transform: scale(1.01) translateY(-5px);
+	color:#eb4a4a;
+	background: var(--main-color);
+}
+.icons{
+    text-decoration: none;
+    color: white;
+    margin-left: 170px;
+}
+.icons ion-icon{
+    color: white;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-top: 5px;
+    transition: .3s ease;
+    margin-left: 10px;
+}
+.icons ion-icon:hover{
+    color:#eb4a4a;
+}
