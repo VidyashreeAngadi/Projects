@@ -1,0 +1,135 @@
+import streamlit as st
+import pandas as pd
+import random
+from sklearn.ensemble import RandomForestClassifier
+import matplotlib.pyplot as plt
+
+# --------------------------
+# 1. Dataset and Model
+# --------------------------
+data = {
+    "heart_rate": [60, 65, 70, 85, 95, 100, 110, 120, 130, 140,
+                   62, 68, 75, 88, 98, 105, 115, 125, 135, 145],
+    "sleep_hours": [8, 7.5, 7, 6, 5.5, 5, 4.5, 4, 3.5, 3,
+                    8.5, 7.2, 6.8, 6, 5.3, 4.9, 4.3, 3.8, 3.2, 2.5],
+    "stress_level": [0, 0, 0, 1, 1, 1, 2, 2, 2, 2,
+                     0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
+}
+df = pd.DataFrame(data)
+X = df.drop("stress_level", axis=1)
+y = df["stress_level"]
+
+clf = RandomForestClassifier()
+clf.fit(X, y)
+
+# --------------------------
+# 2. Music Library (Only Spotify links)
+# --------------------------
+music_library = {
+    0: {
+        "Ambient": [
+            {"title": "Weightless - Marconi Union", "url": "https://open.spotify.com/track/3wYyXW9FX88gQWbkn4tF9T"},
+            {"title": "Rain Sounds - Calm App", "url": "https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR"}
+        ],
+        "Classical": [
+            {"title": "Moonlight Sonata - Beethoven", "url": "https://open.spotify.com/track/3jS9HyOMnoQdY4LIFeG3l5"},
+            {"title": "Clair de Lune - Debussy", "url": "https://open.spotify.com/track/0nJW01T7XtvILxQgC5J7Wh"}
+        ]
+    },
+    1: {
+        "Lo-fi": [
+            {"title": "Lo-fi Chill Beats", "url": "https://open.spotify.com/playlist/37i9dQZF1DXdbXrPNafg9d"},
+            {"title": "Lo-fi Study Vibes", "url": "https://open.spotify.com/playlist/37i9dQZF1DXc8kgYqQLMfH"}
+        ],
+        "Jazz": [
+            {"title": "Soft Jazz", "url": "https://open.spotify.com/playlist/37i9dQZF1DXbITWG1ZJKYt"},
+            {"title": "Late Night Jazz", "url": "https://open.spotify.com/playlist/37i9dQZF1DXdwTUxmGKrdN"}
+        ],
+        "Ambient Guitar": [
+            {"title": "Chill Guitar", "url": "https://open.spotify.com/playlist/37i9dQZF1DX8Uebhn9wzrS"},
+            {"title": "Ambient Guitar", "url": "https://open.spotify.com/playlist/37i9dQZF1DXdb8gAxFeK6V"}
+        ]
+    },
+    2: {
+        "Pop": [
+            {"title": "Energetic Pop", "url": "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"},
+            {"title": "Happy Hits", "url": "https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC"}
+        ],
+        "Workout": [
+            {"title": "Pump Up Songs", "url": "https://open.spotify.com/playlist/37i9dQZF1DX70RN3TfWWJh"},
+            {"title": "Beast Mode", "url": "https://open.spotify.com/playlist/37i9dQZF1DX76Wlfdnj7AP"}
+        ],
+        "EDM": [
+            {"title": "Fast Tempo EDM", "url": "https://open.spotify.com/playlist/37i9dQZF1DX6VdMW310YC7"},
+            {"title": "Rave Essentials", "url": "https://open.spotify.com/playlist/37i9dQZF1DXaXB8fQg7xif"}
+        ]
+    }
+}
+stress_map = {0: "Low", 1: "Medium", 2: "High"}
+
+# --------------------------
+# 3. Streamlit Interface
+# --------------------------
+st.set_page_config(page_title="Stress & Music Recommender", layout="centered")
+st.title("🎧 Stress Detection & Music Recommendation App")
+st.write("Detect stress from your heart rate and sleep hours, and get music recommendations based on your stress level!")
+
+# Inputs
+heart_rate = st.number_input("Heart Rate (bpm):", min_value=40, max_value=200, value=75)
+sleep_hours = st.slider("Sleep Hours (last night):", 0.0, 12.0, 7.0, step=0.5)
+
+# History file setup
+history_file = "user_history.csv"
+try:
+    history_df = pd.read_csv(history_file)
+except:
+    history_df = pd.DataFrame(columns=["Heart Rate", "Sleep Hours", "Stress Level", "Genres"])
+
+# --------------------------
+# 4. Predict & Recommend
+# --------------------------
+if st.button("Get Stress Level & Music"):
+    input_data = [[heart_rate, sleep_hours]]
+    stress_level = clf.predict(input_data)[0]
+
+    st.subheader(f"🧠 Detected Stress Level: *{stress_map[stress_level]}*")
+
+    # Show all genres for this stress level, no genre selection
+    st.subheader("🎵 Recommended Tracks:")
+    all_tracks = []
+    for genre, tracks in music_library[stress_level].items():
+        st.markdown(f"### {genre}")
+        # Show up to 3 random tracks per genre
+        sample_tracks = random.sample(tracks, k=min(3, len(tracks)))
+        for track in sample_tracks:
+            st.markdown(f"🎵 *{track['title']}* — [Listen on Spotify]({track['url']})")
+
+        all_tracks.extend(sample_tracks)
+
+    # Save to history (save all genres recommended as comma-separated string)
+    genres_str = ", ".join(music_library[stress_level].keys())
+    new_row = pd.DataFrame([[heart_rate, sleep_hours, stress_map[stress_level], genres_str]],
+                           columns=["Heart Rate", "Sleep Hours", "Stress Level", "Genres"])
+    history_df = pd.concat([history_df, new_row], ignore_index=True)
+    history_df.to_csv(history_file, index=False)
+
+    # Show Graph
+    st.subheader("📈 Stress Prediction Graph")
+    fig, ax = plt.subplots()
+    scatter = ax.scatter(df["heart_rate"], df["sleep_hours"], c=df["stress_level"], cmap="coolwarm", label="Dataset")
+    ax.scatter(heart_rate, sleep_hours, color='black', label="Your Input", s=100, marker='X')
+    ax.set_xlabel("Heart Rate")
+    ax.set_ylabel("Sleep Hours")
+    ax.set_title("Heart Rate vs Sleep Hours")
+    ax.legend()
+    st.pyplot(fig)
+
+# --------------------------
+# 5. Show History
+# --------------------------
+st.markdown("---")
+st.subheader("🧾 Your History")
+if not history_df.empty:
+    st.dataframe(history_df)
+else:
+    st.info("No prediction history yet.")
